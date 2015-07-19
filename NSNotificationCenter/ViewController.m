@@ -18,9 +18,7 @@
     [super viewDidLoad];
     
     NSString *notificationName = @"MTPostNotificationTarget";
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self selector:@selector(useNotificationWithString:)
-     name:notificationName object:nil];//add observer é o cara que fica observando e quando ocorre uma mudança no
+   //add observer é o cara que fica observando e quando ocorre uma mudança no
     //nsnotificationCenter ele chama o metodo useNotificationWithString, o grande segredo é o notificationName
     // que vai ser chamado no postNotificationWithstring
     
@@ -51,12 +49,5 @@
     }
 }
 
--(void)useNotificationWithString:(txt *)notification{
-    NSString *key = @"OrientationStringValue";
-    NSDictionary *dictionary = [notification userInfo];
-    NSString *stringValueToUse = [dictionary valueForKey:key];
-    NSLog(@"Device orientation --> %@",stringValueToUse);
-    
-}
 
 @end
